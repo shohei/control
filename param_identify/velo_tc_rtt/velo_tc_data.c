@@ -10,7 +10,7 @@
  * Model version                  : 1.6
  * Simulink Coder version         : 8.8 (R2015a) 09-Feb-2015
  * TLC version                    : 8.8 (Jan 19 2015)
- * C/C++ source code generated on : Tue Dec 22 21:10:57 2015
+ * C/C++ source code generated on : Tue Dec 22 21:20:16 2015
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: Atmel->AVR

@@ -10,7 +10,7 @@
  * Model version                  : 1.6
  * Simulink Coder version         : 8.8 (R2015a) 09-Feb-2015
  * TLC version                    : 8.8 (Jan 19 2015)
- * C/C++ source code generated on : Tue Dec 22 21:10:57 2015
+ * C/C++ source code generated on : Tue Dec 22 21:20:16 2015
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -67,7 +67,7 @@
 #endif
 
 #ifndef rtmGetT
-# define rtmGetT(rtm)                  ((rtm)->Timing.taskTime0)
+# define rtmGetT(rtm)                  (rtmGetTPtr((rtm))[0])
 #endif
 
 #ifndef rtmGetTFinal
@@ -77,6 +77,7 @@
 /* Block signals (auto storage) */
 typedef struct {
   real_T VectorConcatenate[2];         /* '<S1>/Vector Concatenate' */
+  uint8_T DataTypeConversion;          /* '<S2>/Data Type Conversion' */
 } B_velo_tc_T;
 
 /* Block states (auto storage) for system '<Root>' */
@@ -130,6 +131,7 @@ struct P_velo_tc_T_ {
 struct tag_RTM_velo_tc_T {
   const char_T *errorStatus;
   RTWExtModeInfo *extModeInfo;
+  RTWSolverInfo solverInfo;
 
   /*
    * Sizes:
@@ -156,11 +158,14 @@ struct tag_RTM_velo_tc_T {
    * the timing information for the model.
    */
   struct {
-    time_T taskTime0;
     uint32_T clockTick0;
     time_T stepSize0;
+    uint32_T clockTick1;
     time_T tFinal;
+    SimTimeStep simTimeStep;
     boolean_T stopRequestedFlag;
+    time_T *t;
+    time_T tArray[2];
   } Timing;
 };
 

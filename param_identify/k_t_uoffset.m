@@ -17,7 +17,6 @@ while(1)
     end
     pause(5);
 end
-yout = get_param('velo_tc','yout');
 y=yout.signals.values;
 t=yout.time;
 y_2=y(:,2);

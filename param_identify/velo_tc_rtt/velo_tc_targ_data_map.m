@@ -129,7 +129,7 @@
   ;%**************************
       
     nTotData      = 0; %add to this count as we go
-    nTotSects     = 1;
+    nTotSects     = 2;
     sectIdxOffset = 0;
     
     ;%
@@ -163,6 +163,17 @@
       sigMap.sections(1) = section;
       clear section
       
+      section.nData     = 1;
+      section.data(1)  = dumData; %prealloc
+      
+	  ;% velo_tc_B.DataTypeConversion
+	  section.data(1).logicalSrcIdx = 1;
+	  section.data(1).dtTransOffset = 0;
+	
+      nTotData = nTotData + section.nData;
+      sigMap.sections(2) = section;
+      clear section
+      
     
       ;%
       ;% Non-auto Data (signal)
@@ -182,7 +193,7 @@
       
     nTotData      = 0; %add to this count as we go
     nTotSects     = 1;
-    sectIdxOffset = 1;
+    sectIdxOffset = 2;
     
     ;%
     ;% Define dummy sections & preallocate arrays
@@ -241,8 +252,8 @@
   ;%
 
 
-  targMap.checksum0 = 730665787;
-  targMap.checksum1 = 3789317073;
-  targMap.checksum2 = 3294523768;
-  targMap.checksum3 = 2733310781;
+  targMap.checksum0 = 1239309386;
+  targMap.checksum1 = 466329906;
+  targMap.checksum2 = 223780135;
+  targMap.checksum3 = 4052262360;
 

@@ -10,7 +10,7 @@
  * Model version                  : 1.6
  * Simulink Coder version         : 8.8 (R2015a) 09-Feb-2015
  * TLC version                    : 8.8 (Jan 19 2015)
- * C/C++ source code generated on : Tue Dec 22 21:10:57 2015
+ * C/C++ source code generated on : Tue Dec 22 21:20:16 2015
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -37,10 +37,9 @@ void velo_tc_output(void)
 {
   uint16_T rtb_AnalogInput_0;
   real_T rtb_Gain;
-  uint8_T rtb_Gain_0;
 
   /* Step: '<Root>/Step' */
-  rtb_Gain = velo_tc_M->Timing.taskTime0;
+  rtb_Gain = velo_tc_M->Timing.t[0];
   if (rtb_Gain < velo_tc_P.Step_Time) {
     rtb_Gain = velo_tc_P.Step_Y0;
   } else {
@@ -52,7 +51,7 @@ void velo_tc_output(void)
   /* Switch: '<Root>/Switch' */
   if (rtb_Gain > velo_tc_P.Switch_Threshold) {
     /* Step: '<Root>/Step1' */
-    if (velo_tc_M->Timing.taskTime0 < velo_tc_P.s_time) {
+    if (velo_tc_M->Timing.t[0] < velo_tc_P.s_time) {
       rtb_Gain = velo_tc_P.r_const;
     } else {
       rtb_Gain = velo_tc_P.p_const;
@@ -85,28 +84,28 @@ void velo_tc_output(void)
   /* DataTypeConversion: '<S2>/Data Type Conversion' */
   if (rtb_Gain < 256.0) {
     if (rtb_Gain >= 0.0) {
-      rtb_Gain_0 = (uint8_T)rtb_Gain;
+      velo_tc_B.DataTypeConversion = (uint8_T)rtb_Gain;
     } else {
-      rtb_Gain_0 = 0U;
+      velo_tc_B.DataTypeConversion = 0U;
     }
   } else {
-    rtb_Gain_0 = MAX_uint8_T;
+    velo_tc_B.DataTypeConversion = MAX_uint8_T;
   }
 
   /* End of DataTypeConversion: '<S2>/Data Type Conversion' */
 
   /* S-Function (arduinoanalogoutput_sfcn): '<S2>/PWM' */
-  MW_analogWrite(velo_tc_P.PWM_pinNumber, rtb_Gain_0);
+  MW_analogWrite(velo_tc_P.PWM_pinNumber, velo_tc_B.DataTypeConversion);
 }
 
 /* Model update function */
 void velo_tc_update(void)
 {
   /* signal main to stop simulation */
-  {                                    /* Sample time: [0.01s, 0.0s] */
+  {                                    /* Sample time: [0.0s, 0.0s] */
     if ((rtmGetTFinal(velo_tc_M)!=-1) &&
-        !((rtmGetTFinal(velo_tc_M)-velo_tc_M->Timing.taskTime0) >
-          velo_tc_M->Timing.taskTime0 * (DBL_EPSILON))) {
+        !((rtmGetTFinal(velo_tc_M)-velo_tc_M->Timing.t[0]) > velo_tc_M->
+          Timing.t[0] * (DBL_EPSILON))) {
       rtmSetErrorStatus(velo_tc_M, "Simulation finished");
     }
 
@@ -121,8 +120,18 @@ void velo_tc_update(void)
    * and "Timing.stepSize0". Size of "clockTick0" ensures timer will not
    * overflow during the application lifespan selected.
    */
-  velo_tc_M->Timing.taskTime0 =
+  velo_tc_M->Timing.t[0] =
     (++velo_tc_M->Timing.clockTick0) * velo_tc_M->Timing.stepSize0;
+
+  {
+    /* Update absolute timer for sample time: [0.01s, 0.0s] */
+    /* The "clockTick1" counts the number of times the code of this task has
+     * been executed. The resolution of this integer timer is 0.01, which is the step size
+     * of the task. Size of "clockTick1" ensures timer will not overflow during the
+     * application lifespan selected.
+     */
+    velo_tc_M->Timing.clockTick1++;
+  }
 }
 
 /* Model initialize function */
@@ -133,23 +142,35 @@ void velo_tc_initialize(void)
   /* initialize real-time model */
   (void) memset((void *)velo_tc_M, 0,
                 sizeof(RT_MODEL_velo_tc_T));
+
+  {
+    /* Setup solver object */
+    rtsiSetSimTimeStepPtr(&velo_tc_M->solverInfo, &velo_tc_M->Timing.simTimeStep);
+    rtsiSetTPtr(&velo_tc_M->solverInfo, &rtmGetTPtr(velo_tc_M));
+    rtsiSetStepSizePtr(&velo_tc_M->solverInfo, &velo_tc_M->Timing.stepSize0);
+    rtsiSetErrorStatusPtr(&velo_tc_M->solverInfo, (&rtmGetErrorStatus(velo_tc_M)));
+    rtsiSetRTModelPtr(&velo_tc_M->solverInfo, velo_tc_M);
+  }
+
+  rtsiSetSimTimeStep(&velo_tc_M->solverInfo, MAJOR_TIME_STEP);
+  rtsiSetSolverName(&velo_tc_M->solverInfo,"FixedStepDiscrete");
+  rtmSetTPtr(velo_tc_M, &velo_tc_M->Timing.tArray[0]);
   rtmSetTFinal(velo_tc_M, 20.0);
   velo_tc_M->Timing.stepSize0 = 0.01;
 
   /* External mode info */
-  velo_tc_M->Sizes.checksums[0] = (730665787U);
-  velo_tc_M->Sizes.checksums[1] = (3789317073U);
-  velo_tc_M->Sizes.checksums[2] = (3294523768U);
-  velo_tc_M->Sizes.checksums[3] = (2733310781U);
+  velo_tc_M->Sizes.checksums[0] = (1239309386U);
+  velo_tc_M->Sizes.checksums[1] = (466329906U);
+  velo_tc_M->Sizes.checksums[2] = (223780135U);
+  velo_tc_M->Sizes.checksums[3] = (4052262360U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
     static RTWExtModeInfo rt_ExtModeInfo;
-    static const sysRanDType *systemRan[2];
+    static const sysRanDType *systemRan[1];
     velo_tc_M->extModeInfo = (&rt_ExtModeInfo);
     rteiSetSubSystemActiveVectorAddresses(&rt_ExtModeInfo, systemRan);
     systemRan[0] = &rtAlwaysEnabled;
-    systemRan[1] = &rtAlwaysEnabled;
     rteiSetModelMappingInfoPtr(velo_tc_M->extModeInfo,
       &velo_tc_M->SpecialInfo.mappingInfo);
     rteiSetChecksumsPtr(velo_tc_M->extModeInfo, velo_tc_M->Sizes.checksums);

@@ -10,7 +10,7 @@
  * Model version                  : 1.6
  * Simulink Coder version         : 8.8 (R2015a) 09-Feb-2015
  * TLC version                    : 8.8 (Jan 19 2015)
- * C/C++ source code generated on : Tue Dec 22 21:10:57 2015
+ * C/C++ source code generated on : Tue Dec 22 21:20:16 2015
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -24,12 +24,24 @@
 #include "multiword_types.h"
 
 /* Private macros used by the generated code to access rtModel */
+#ifndef rtmIsMajorTimeStep
+# define rtmIsMajorTimeStep(rtm)       (((rtm)->Timing.simTimeStep) == MAJOR_TIME_STEP)
+#endif
+
+#ifndef rtmIsMinorTimeStep
+# define rtmIsMinorTimeStep(rtm)       (((rtm)->Timing.simTimeStep) == MINOR_TIME_STEP)
+#endif
+
 #ifndef rtmSetTFinal
 # define rtmSetTFinal(rtm, val)        ((rtm)->Timing.tFinal = (val))
 #endif
 
 #ifndef rtmGetTPtr
-# define rtmGetTPtr(rtm)               (&(rtm)->Timing.taskTime0)
+# define rtmGetTPtr(rtm)               ((rtm)->Timing.t)
+#endif
+
+#ifndef rtmSetTPtr
+# define rtmSetTPtr(rtm, val)          ((rtm)->Timing.t = (val))
 #endif
 
 #ifndef UCHAR_MAX

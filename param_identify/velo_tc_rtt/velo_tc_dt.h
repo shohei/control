@@ -9,7 +9,7 @@
  *
  * Model version              : 1.6
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Tue Dec 22 21:10:57 2015
+ * C source code generated on : Tue Dec 22 21:20:16 2015
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -61,7 +61,9 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&velo_tc_B.VectorConcatenate[0]), 0, 0, 2 }
+  { (char_T *)(&velo_tc_B.VectorConcatenate[0]), 0, 0, 2 },
+
+  { (char_T *)(&velo_tc_B.DataTypeConversion), 3, 0, 1 }
   ,
 
   { (char_T *)(&velo_tc_DW.Scope_PWORK.LoggedData), 11, 0, 1 }
@@ -69,7 +71,7 @@ static DataTypeTransition rtBTransitions[] = {
 
 /* data type transition table for block I/O structure */
 static DataTypeTransitionTable rtBTransTable = {
-  2U,
+  3U,
   rtBTransitions
 };
 
