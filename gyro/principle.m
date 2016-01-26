@@ -1,0 +1,6 @@
+function principle
+
+
+
+
+end
