@@ -2,9 +2,9 @@ function [h1,h2,h3,h4,h5] = drawDisc(r,A)
 
 % r = [1,1,1];       % Reference position
 % A = [-pi/3, 0, 0]; % Reference orientation (x-y-z Euler angle)
-xmax=3;
-ymax=3;
-zmax=3;
+xmax=2;
+ymax=2;
+zmax=2;
 Radius = 1;
 Height = 0.3;
 SideCount = 20;
@@ -70,6 +70,9 @@ axis vis3d equal;
 % % view([-37.5,30]);
 % camlight;
 grid on;
+
+
+plot3([0 r(1)],[0 r(2)],[r(3)-2 r(3)],'b-','LineWidth',4)
 
 xlim([-xmax xmax]);
 ylim([-ymax ymax]);
