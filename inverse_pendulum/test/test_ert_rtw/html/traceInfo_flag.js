@@ -1,0 +1,37 @@
+function TraceInfoFlag() {
+    this.traceFlag = new Array();
+    this.traceFlag["test.c:42c35"]=1;
+    this.traceFlag["test.c:48c60"]=1;
+    this.traceFlag["test.c:48c66"]=1;
+    this.traceFlag["test.c:49c13"]=1;
+    this.traceFlag["test.c:49c31"]=1;
+    this.traceFlag["test.c:49c51"]=1;
+    this.traceFlag["test.c:58c35"]=1;
+    this.traceFlag["test.c:64c60"]=1;
+    this.traceFlag["test.c:64c66"]=1;
+    this.traceFlag["test.c:65c13"]=1;
+    this.traceFlag["test.c:65c31"]=1;
+    this.traceFlag["test.c:65c51"]=1;
+    this.traceFlag["test.c:71c50"]=1;
+    this.traceFlag["test.c:71c80"]=1;
+    this.traceFlag["test.c:72c31"]=1;
+    this.traceFlag["test.c:72c38"]=1;
+    this.traceFlag["test.c:72c66"]=1;
+    this.traceFlag["test.c:73c32"]=1;
+    this.traceFlag["test.c:73c64"]=1;
+    this.traceFlag["test.c:76c29"]=1;
+    this.traceFlag["test.c:85c26"]=1;
+    this.traceFlag["test.c:90c37"]=1;
+    this.traceFlag["test.c:96c49"]=1;
+    this.traceFlag["test.c:96c55"]=1;
+    this.traceFlag["test.c:97c7"]=1;
+    this.traceFlag["test.c:97c25"]=1;
+    this.traceFlag["test.c:97c45"]=1;
+    this.traceFlag["test.c:104c37"]=1;
+    this.traceFlag["test.c:110c49"]=1;
+    this.traceFlag["test.c:110c55"]=1;
+    this.traceFlag["test.c:111c7"]=1;
+    this.traceFlag["test.c:111c25"]=1;
+    this.traceFlag["test.c:111c45"]=1;
+}
+top.TraceInfoFlag.instance = new TraceInfoFlag();
