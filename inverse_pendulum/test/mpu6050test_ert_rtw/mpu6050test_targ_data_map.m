@@ -143,12 +143,16 @@
       dworkMap.sections(1) = section;
       clear section
       
-      section.nData     = 1;
-      section.data(1)  = dumData; %prealloc
+      section.nData     = 2;
+      section.data(2)  = dumData; %prealloc
       
 	  ;% mpu6050test_DW.Scope_PWORK.LoggedData
 	  section.data(1).logicalSrcIdx = 1;
 	  section.data(1).dtTransOffset = 0;
+	
+	  ;% mpu6050test_DW.ToWorkspace_PWORK.LoggedData
+	  section.data(2).logicalSrcIdx = 2;
+	  section.data(2).dtTransOffset = 1;
 	
       nTotData = nTotData + section.nData;
       dworkMap.sections(2) = section;
@@ -180,8 +184,8 @@
   ;%
 
 
-  targMap.checksum0 = 245392321;
-  targMap.checksum1 = 1648144488;
-  targMap.checksum2 = 1962372955;
-  targMap.checksum3 = 818522330;
+  targMap.checksum0 = 2854802582;
+  targMap.checksum1 = 3603301035;
+  targMap.checksum2 = 2087832;
+  targMap.checksum3 = 1329761400;
 

@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.9
  * Simulink Coder version         : 8.10 (R2016a) 10-Feb-2016
- * C/C++ source code generated on : Wed Dec 21 16:37:07 2016
+ * C/C++ source code generated on : Wed Dec 21 17:09:46 2016
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -56,12 +56,12 @@ void mpu6050test_step(void)
   /* External mode */
   rtExtModeUploadCheckTrigger(1);
 
-  {                                    /* Sample time: [0.2s, 0.0s] */
+  {                                    /* Sample time: [0.1s, 0.0s] */
     rtExtModeUpload(0, mpu6050test_M->Timing.taskTime0);
   }
 
   /* signal main to stop simulation */
-  {                                    /* Sample time: [0.2s, 0.0s] */
+  {                                    /* Sample time: [0.1s, 0.0s] */
     if ((rtmGetTFinal(mpu6050test_M)!=-1) &&
         !((rtmGetTFinal(mpu6050test_M)-mpu6050test_M->Timing.taskTime0) >
           mpu6050test_M->Timing.taskTime0 * (DBL_EPSILON))) {
@@ -92,13 +92,13 @@ void mpu6050test_initialize(void)
   (void) memset((void *)mpu6050test_M, 0,
                 sizeof(RT_MODEL_mpu6050test_T));
   rtmSetTFinal(mpu6050test_M, 10.0);
-  mpu6050test_M->Timing.stepSize0 = 0.2;
+  mpu6050test_M->Timing.stepSize0 = 0.1;
 
   /* External mode info */
-  mpu6050test_M->Sizes.checksums[0] = (245392321U);
-  mpu6050test_M->Sizes.checksums[1] = (1648144488U);
-  mpu6050test_M->Sizes.checksums[2] = (1962372955U);
-  mpu6050test_M->Sizes.checksums[3] = (818522330U);
+  mpu6050test_M->Sizes.checksums[0] = (2854802582U);
+  mpu6050test_M->Sizes.checksums[1] = (3603301035U);
+  mpu6050test_M->Sizes.checksums[2] = (2087832U);
+  mpu6050test_M->Sizes.checksums[3] = (1329761400U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;

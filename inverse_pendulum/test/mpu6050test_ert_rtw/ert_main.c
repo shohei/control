@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.9
  * Simulink Coder version         : 8.10 (R2016a) 10-Feb-2016
- * C/C++ source code generated on : Wed Dec 21 16:37:07 2016
+ * C/C++ source code generated on : Wed Dec 21 17:09:46 2016
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -57,7 +57,7 @@ void rt_OneStep(void)
 int main(void)
 {
   volatile boolean_T runModel = 1;
-  float modelBaseRate = 0.2;
+  float modelBaseRate = 0.1;
   float systemClock = 0;
   init();
   MW_Arduino_Init();

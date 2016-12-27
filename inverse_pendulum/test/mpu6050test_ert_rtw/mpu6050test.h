@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.9
  * Simulink Coder version         : 8.10 (R2016a) 10-Feb-2016
- * C/C++ source code generated on : Wed Dec 21 16:37:07 2016
+ * C/C++ source code generated on : Wed Dec 21 17:09:46 2016
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -90,6 +90,10 @@ typedef struct {
   struct {
     void *LoggedData;
   } Scope_PWORK;                       /* '<Root>/Scope' */
+
+  struct {
+    void *LoggedData;
+  } ToWorkspace_PWORK;                 /* '<Root>/To Workspace' */
 } DW_mpu6050test_T;
 
 /* Real-time Model Data Structure */

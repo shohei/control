@@ -10,6 +10,8 @@ function RTW_Sid2UrlHash() {
 	this.urlHashMap["mpu6050test:1"] = "mpu6050test.c:37,51,139&mpu6050test.h:81,82,83,89";
 	/* <Root>/Scope */
 	this.urlHashMap["mpu6050test:5"] = "mpu6050test.h:92";
+	/* <Root>/To Workspace */
+	this.urlHashMap["mpu6050test:7"] = "mpu6050test.h:96";
 	/* <Root>/Vector
 Concatenate */
 	this.urlHashMap["mpu6050test:6"] = "mpu6050test.h:84";
@@ -31,6 +33,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["mpu6050test:1"] = {rtwname: "<Root>/S-Function Builder"};
 	this.rtwnameHashMap["<Root>/Scope"] = {sid: "mpu6050test:5"};
 	this.sidHashMap["mpu6050test:5"] = {rtwname: "<Root>/Scope"};
+	this.rtwnameHashMap["<Root>/To Workspace"] = {sid: "mpu6050test:7"};
+	this.sidHashMap["mpu6050test:7"] = {rtwname: "<Root>/To Workspace"};
 	this.rtwnameHashMap["<Root>/Vector Concatenate"] = {sid: "mpu6050test:6"};
 	this.sidHashMap["mpu6050test:6"] = {rtwname: "<Root>/Vector Concatenate"};
 	this.getSID = function(rtwname) { return this.rtwnameHashMap[rtwname];}

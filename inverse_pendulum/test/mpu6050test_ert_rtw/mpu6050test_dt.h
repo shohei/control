@@ -9,7 +9,7 @@
  *
  * Model version              : 1.9
  * Simulink Coder version : 8.10 (R2016a) 10-Feb-2016
- * C source code generated on : Wed Dec 21 16:37:07 2016
+ * C source code generated on : Wed Dec 21 17:09:46 2016
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -62,7 +62,7 @@ static DataTypeTransition rtBTransitions[] = {
 
   { (char_T *)(&mpu6050test_DW.SFunctionBuilder_DSTATE), 0, 0, 1 },
 
-  { (char_T *)(&mpu6050test_DW.Scope_PWORK.LoggedData), 11, 0, 1 }
+  { (char_T *)(&mpu6050test_DW.Scope_PWORK.LoggedData), 11, 0, 2 }
 };
 
 /* data type transition table for block I/O structure */

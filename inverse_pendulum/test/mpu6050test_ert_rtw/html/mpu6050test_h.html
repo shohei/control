@@ -33,7 +33,7 @@
 <tr name="11" id="11">
 <td>11</td><td><span class="ct"> * Simulink Coder version         : 8.10 (R2016a) 10-Feb-2016</span></td></tr>
 <tr name="12" id="12">
-<td>12</td><td><span class="ct"> * C/C++ source code generated on : Wed Dec 21 16:37:07 2016</span></td></tr>
+<td>12</td><td><span class="ct"> * C/C++ source code generated on : Wed Dec 21 17:09:46 2016</span></td></tr>
 <tr name="13" id="13">
 <td>13</td><td><span class="ct"> *</span></td></tr>
 <tr name="14" id="14">
@@ -195,161 +195,169 @@
 <tr name="92" id="92">
 <td>92</td><td>  <span class="br">}</span> <a id="92c5" class="tk">Scope_PWORK</a>;                       <span class="ct">/* '<a class="ct blk" blk_line="92">&lt;Root&gt;/Scope</a>' */</span></td></tr>
 <tr name="93" id="93">
-<td>93</td><td><span class="br">}</span> <a id="93c3" class="tk">DW_mpu6050test_T</a>;</td></tr>
+<td>93</td><td></td></tr>
 <tr name="94" id="94">
-<td>94</td><td></td></tr>
+<td>94</td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
 <tr name="95" id="95">
-<td>95</td><td><span class="ct">/* Real-time Model Data Structure */</span></td></tr>
+<td>95</td><td>    <span class="kw">void</span> <a id="95c10" class="tk">*</a><a id="95c11" class="tk">LoggedData</a>;</td></tr>
 <tr name="96" id="96">
-<td>96</td><td><span class="kw">struct</span> <a id="96c8" class="tk">tag_RTM_mpu6050test_T</a> <span class="br">{</span></td></tr>
+<td>96</td><td>  <span class="br">}</span> <a id="96c5" class="tk">ToWorkspace_PWORK</a>;                 <span class="ct">/* '<a class="ct blk" blk_line="96">&lt;Root&gt;/To Workspace</a>' */</span></td></tr>
 <tr name="97" id="97">
-<td>97</td><td>  <span class="kw">const</span> <a id="97c9" class="tk">char_T</a> <a id="97c16" class="tk">*</a><a id="97c17" class="tk">errorStatus</a>;</td></tr>
+<td>97</td><td><span class="br">}</span> <a id="97c3" class="tk">DW_mpu6050test_T</a>;</td></tr>
 <tr name="98" id="98">
-<td>98</td><td>  <a id="98c3" class="tk">RTWExtModeInfo</a> <a id="98c18" class="tk">*</a><a id="98c19" class="tk">extModeInfo</a>;</td></tr>
+<td>98</td><td></td></tr>
 <tr name="99" id="99">
-<td>99</td><td></td></tr>
+<td>99</td><td><span class="ct">/* Real-time Model Data Structure */</span></td></tr>
 <tr name="100" id="100">
-<td>100</td><td>  <span class="ct">/*</span></td></tr>
+<td>100</td><td><span class="kw">struct</span> <a id="100c8" class="tk">tag_RTM_mpu6050test_T</a> <span class="br">{</span></td></tr>
 <tr name="101" id="101">
-<td>101</td><td><span class="ct">   * Sizes:</span></td></tr>
+<td>101</td><td>  <span class="kw">const</span> <a id="101c9" class="tk">char_T</a> <a id="101c16" class="tk">*</a><a id="101c17" class="tk">errorStatus</a>;</td></tr>
 <tr name="102" id="102">
-<td>102</td><td><span class="ct">   * The following substructure contains sizes information</span></td></tr>
+<td>102</td><td>  <a id="102c3" class="tk">RTWExtModeInfo</a> <a id="102c18" class="tk">*</a><a id="102c19" class="tk">extModeInfo</a>;</td></tr>
 <tr name="103" id="103">
-<td>103</td><td><span class="ct">   * for many of the model attributes such as inputs, outputs,</span></td></tr>
+<td>103</td><td></td></tr>
 <tr name="104" id="104">
-<td>104</td><td><span class="ct">   * dwork, sample times, etc.</span></td></tr>
+<td>104</td><td>  <span class="ct">/*</span></td></tr>
 <tr name="105" id="105">
-<td>105</td><td><span class="ct">   */</span></td></tr>
+<td>105</td><td><span class="ct">   * Sizes:</span></td></tr>
 <tr name="106" id="106">
-<td>106</td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<td>106</td><td><span class="ct">   * The following substructure contains sizes information</span></td></tr>
 <tr name="107" id="107">
-<td>107</td><td>    <a id="107c5" class="tk">uint32_T</a> <a id="107c14" class="tk">checksums</a>[4];</td></tr>
+<td>107</td><td><span class="ct">   * for many of the model attributes such as inputs, outputs,</span></td></tr>
 <tr name="108" id="108">
-<td>108</td><td>  <span class="br">}</span> <a id="108c5" class="tk">Sizes</a>;</td></tr>
+<td>108</td><td><span class="ct">   * dwork, sample times, etc.</span></td></tr>
 <tr name="109" id="109">
-<td>109</td><td></td></tr>
+<td>109</td><td><span class="ct">   */</span></td></tr>
 <tr name="110" id="110">
-<td>110</td><td>  <span class="ct">/*</span></td></tr>
+<td>110</td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
 <tr name="111" id="111">
-<td>111</td><td><span class="ct">   * SpecialInfo:</span></td></tr>
+<td>111</td><td>    <a id="111c5" class="tk">uint32_T</a> <a id="111c14" class="tk">checksums</a>[4];</td></tr>
 <tr name="112" id="112">
-<td>112</td><td><span class="ct">   * The following substructure contains special information</span></td></tr>
+<td>112</td><td>  <span class="br">}</span> <a id="112c5" class="tk">Sizes</a>;</td></tr>
 <tr name="113" id="113">
-<td>113</td><td><span class="ct">   * related to other components that are dependent on RTW.</span></td></tr>
+<td>113</td><td></td></tr>
 <tr name="114" id="114">
-<td>114</td><td><span class="ct">   */</span></td></tr>
+<td>114</td><td>  <span class="ct">/*</span></td></tr>
 <tr name="115" id="115">
-<td>115</td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<td>115</td><td><span class="ct">   * SpecialInfo:</span></td></tr>
 <tr name="116" id="116">
-<td>116</td><td>    <span class="kw">const</span> <span class="kw">void</span> <a id="116c16" class="tk">*</a><a id="116c17" class="tk">mappingInfo</a>;</td></tr>
+<td>116</td><td><span class="ct">   * The following substructure contains special information</span></td></tr>
 <tr name="117" id="117">
-<td>117</td><td>  <span class="br">}</span> <a id="117c5" class="tk">SpecialInfo</a>;</td></tr>
+<td>117</td><td><span class="ct">   * related to other components that are dependent on RTW.</span></td></tr>
 <tr name="118" id="118">
-<td>118</td><td></td></tr>
+<td>118</td><td><span class="ct">   */</span></td></tr>
 <tr name="119" id="119">
-<td>119</td><td>  <span class="ct">/*</span></td></tr>
+<td>119</td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
 <tr name="120" id="120">
-<td>120</td><td><span class="ct">   * Timing:</span></td></tr>
+<td>120</td><td>    <span class="kw">const</span> <span class="kw">void</span> <a id="120c16" class="tk">*</a><a id="120c17" class="tk">mappingInfo</a>;</td></tr>
 <tr name="121" id="121">
-<td>121</td><td><span class="ct">   * The following substructure contains information regarding</span></td></tr>
+<td>121</td><td>  <span class="br">}</span> <a id="121c5" class="tk">SpecialInfo</a>;</td></tr>
 <tr name="122" id="122">
-<td>122</td><td><span class="ct">   * the timing information for the model.</span></td></tr>
+<td>122</td><td></td></tr>
 <tr name="123" id="123">
-<td>123</td><td><span class="ct">   */</span></td></tr>
+<td>123</td><td>  <span class="ct">/*</span></td></tr>
 <tr name="124" id="124">
-<td>124</td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<td>124</td><td><span class="ct">   * Timing:</span></td></tr>
 <tr name="125" id="125">
-<td>125</td><td>    <a id="125c5" class="tk">time_T</a> <a id="125c12" class="tk">taskTime0</a>;</td></tr>
+<td>125</td><td><span class="ct">   * The following substructure contains information regarding</span></td></tr>
 <tr name="126" id="126">
-<td>126</td><td>    <a id="126c5" class="tk">uint32_T</a> <a id="126c14" class="tk">clockTick0</a>;</td></tr>
+<td>126</td><td><span class="ct">   * the timing information for the model.</span></td></tr>
 <tr name="127" id="127">
-<td>127</td><td>    <a id="127c5" class="tk">time_T</a> <a id="127c12" class="tk">stepSize0</a>;</td></tr>
+<td>127</td><td><span class="ct">   */</span></td></tr>
 <tr name="128" id="128">
-<td>128</td><td>    <a id="128c5" class="tk">time_T</a> <a id="128c12" class="tk">tFinal</a>;</td></tr>
+<td>128</td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
 <tr name="129" id="129">
-<td>129</td><td>    <a id="129c5" class="tk">boolean_T</a> <a id="129c15" class="tk">stopRequestedFlag</a>;</td></tr>
+<td>129</td><td>    <a id="129c5" class="tk">time_T</a> <a id="129c12" class="tk">taskTime0</a>;</td></tr>
 <tr name="130" id="130">
-<td>130</td><td>  <span class="br">}</span> <a id="130c5" class="tk">Timing</a>;</td></tr>
+<td>130</td><td>    <a id="130c5" class="tk">uint32_T</a> <a id="130c14" class="tk">clockTick0</a>;</td></tr>
 <tr name="131" id="131">
-<td>131</td><td><span class="br">}</span>;</td></tr>
+<td>131</td><td>    <a id="131c5" class="tk">time_T</a> <a id="131c12" class="tk">stepSize0</a>;</td></tr>
 <tr name="132" id="132">
-<td>132</td><td></td></tr>
+<td>132</td><td>    <a id="132c5" class="tk">time_T</a> <a id="132c12" class="tk">tFinal</a>;</td></tr>
 <tr name="133" id="133">
-<td>133</td><td><span class="ct">/* Block signals (auto storage) */</span></td></tr>
+<td>133</td><td>    <a id="133c5" class="tk">boolean_T</a> <a id="133c15" class="tk">stopRequestedFlag</a>;</td></tr>
 <tr name="134" id="134">
-<td>134</td><td><span class="kw">extern</span> <a id="134c8" class="tk">B_mpu6050test_T</a> <a id="134c24" class="tk">mpu6050test_B</a>;</td></tr>
+<td>134</td><td>  <span class="br">}</span> <a id="134c5" class="tk">Timing</a>;</td></tr>
 <tr name="135" id="135">
-<td>135</td><td></td></tr>
+<td>135</td><td><span class="br">}</span>;</td></tr>
 <tr name="136" id="136">
-<td>136</td><td><span class="ct">/* Block states (auto storage) */</span></td></tr>
+<td>136</td><td></td></tr>
 <tr name="137" id="137">
-<td>137</td><td><span class="kw">extern</span> <a id="137c8" class="tk">DW_mpu6050test_T</a> <a id="137c25" class="tk">mpu6050test_DW</a>;</td></tr>
+<td>137</td><td><span class="ct">/* Block signals (auto storage) */</span></td></tr>
 <tr name="138" id="138">
-<td>138</td><td></td></tr>
+<td>138</td><td><span class="kw">extern</span> <a id="138c8" class="tk">B_mpu6050test_T</a> <a id="138c24" class="tk">mpu6050test_B</a>;</td></tr>
 <tr name="139" id="139">
-<td>139</td><td><span class="ct">/* Model entry point functions */</span></td></tr>
+<td>139</td><td></td></tr>
 <tr name="140" id="140">
-<td>140</td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="140c13" class="tk">mpu6050test_initialize</a>(<span class="kw">void</span>);</td></tr>
+<td>140</td><td><span class="ct">/* Block states (auto storage) */</span></td></tr>
 <tr name="141" id="141">
-<td>141</td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="141c13" class="tk">mpu6050test_step</a>(<span class="kw">void</span>);</td></tr>
+<td>141</td><td><span class="kw">extern</span> <a id="141c8" class="tk">DW_mpu6050test_T</a> <a id="141c25" class="tk">mpu6050test_DW</a>;</td></tr>
 <tr name="142" id="142">
-<td>142</td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="142c13" class="tk">mpu6050test_terminate</a>(<span class="kw">void</span>);</td></tr>
+<td>142</td><td></td></tr>
 <tr name="143" id="143">
-<td>143</td><td></td></tr>
+<td>143</td><td><span class="ct">/* Model entry point functions */</span></td></tr>
 <tr name="144" id="144">
-<td>144</td><td><span class="ct">/* Real-time Model object */</span></td></tr>
+<td>144</td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="144c13" class="tk">mpu6050test_initialize</a>(<span class="kw">void</span>);</td></tr>
 <tr name="145" id="145">
-<td>145</td><td><span class="kw">extern</span> <a id="145c8" class="tk">RT_MODEL_mpu6050test_T</a> <a id="145c31" class="tk">*</a><span class="kw">const</span> <a id="145c38" class="tk">mpu6050test_M</a>;</td></tr>
+<td>145</td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="145c13" class="tk">mpu6050test_step</a>(<span class="kw">void</span>);</td></tr>
 <tr name="146" id="146">
-<td>146</td><td></td></tr>
+<td>146</td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="146c13" class="tk">mpu6050test_terminate</a>(<span class="kw">void</span>);</td></tr>
 <tr name="147" id="147">
-<td>147</td><td><span class="ct">/*-</span></td></tr>
+<td>147</td><td></td></tr>
 <tr name="148" id="148">
-<td>148</td><td><span class="ct"> * The generated code includes comments that allow you to trace directly</span></td></tr>
+<td>148</td><td><span class="ct">/* Real-time Model object */</span></td></tr>
 <tr name="149" id="149">
-<td>149</td><td><span class="ct"> * back to the appropriate location in the model.  The basic format</span></td></tr>
+<td>149</td><td><span class="kw">extern</span> <a id="149c8" class="tk">RT_MODEL_mpu6050test_T</a> <a id="149c31" class="tk">*</a><span class="kw">const</span> <a id="149c38" class="tk">mpu6050test_M</a>;</td></tr>
 <tr name="150" id="150">
-<td>150</td><td><span class="ct"> * is &lt;system&gt;/block_name, where system is the system number (uniquely</span></td></tr>
+<td>150</td><td></td></tr>
 <tr name="151" id="151">
-<td>151</td><td><span class="ct"> * assigned by Simulink) and block_name is the name of the block.</span></td></tr>
+<td>151</td><td><span class="ct">/*-</span></td></tr>
 <tr name="152" id="152">
-<td>152</td><td><span class="ct"> *</span></td></tr>
+<td>152</td><td><span class="ct"> * The generated code includes comments that allow you to trace directly</span></td></tr>
 <tr name="153" id="153">
-<td>153</td><td><span class="ct"> * Use the MATLAB hilite_system command to trace the generated code back</span></td></tr>
+<td>153</td><td><span class="ct"> * back to the appropriate location in the model.  The basic format</span></td></tr>
 <tr name="154" id="154">
-<td>154</td><td><span class="ct"> * to the model.  For example,</span></td></tr>
+<td>154</td><td><span class="ct"> * is &lt;system&gt;/block_name, where system is the system number (uniquely</span></td></tr>
 <tr name="155" id="155">
-<td>155</td><td><span class="ct"> *</span></td></tr>
+<td>155</td><td><span class="ct"> * assigned by Simulink) and block_name is the name of the block.</span></td></tr>
 <tr name="156" id="156">
-<td>156</td><td><span class="ct"> * hilite_system('<a class="ct blk" blk_line="156">&lt;S3&gt;</a>')    - opens system 3</span></td></tr>
+<td>156</td><td><span class="ct"> *</span></td></tr>
 <tr name="157" id="157">
-<td>157</td><td><span class="ct"> * hilite_system('<a class="ct blk" blk_line="157">&lt;S3&gt;/Kp</a>') - opens and selects block Kp which resides in S3</span></td></tr>
+<td>157</td><td><span class="ct"> * Use the MATLAB hilite_system command to trace the generated code back</span></td></tr>
 <tr name="158" id="158">
-<td>158</td><td><span class="ct"> *</span></td></tr>
+<td>158</td><td><span class="ct"> * to the model.  For example,</span></td></tr>
 <tr name="159" id="159">
-<td>159</td><td><span class="ct"> * Here is the system hierarchy for this model</span></td></tr>
+<td>159</td><td><span class="ct"> *</span></td></tr>
 <tr name="160" id="160">
-<td>160</td><td><span class="ct"> *</span></td></tr>
+<td>160</td><td><span class="ct"> * hilite_system('<a class="ct blk" blk_line="160">&lt;S3&gt;</a>')    - opens system 3</span></td></tr>
 <tr name="161" id="161">
-<td>161</td><td><span class="ct"> * '<a class="ct blk" blk_line="161">&lt;Root&gt;</a>' : 'mpu6050test'</span></td></tr>
+<td>161</td><td><span class="ct"> * hilite_system('<a class="ct blk" blk_line="161">&lt;S3&gt;/Kp</a>') - opens and selects block Kp which resides in S3</span></td></tr>
 <tr name="162" id="162">
-<td>162</td><td><span class="ct"> */</span></td></tr>
+<td>162</td><td><span class="ct"> *</span></td></tr>
 <tr name="163" id="163">
-<td>163</td><td><span class="pp">#endif</span>                                 <span class="ct">/* RTW_HEADER_mpu6050test_h_ */</span></td></tr>
+<td>163</td><td><span class="ct"> * Here is the system hierarchy for this model</span></td></tr>
 <tr name="164" id="164">
-<td>164</td><td></td></tr>
+<td>164</td><td><span class="ct"> *</span></td></tr>
 <tr name="165" id="165">
-<td>165</td><td><span class="ct">/*</span></td></tr>
+<td>165</td><td><span class="ct"> * '<a class="ct blk" blk_line="165">&lt;Root&gt;</a>' : 'mpu6050test'</span></td></tr>
 <tr name="166" id="166">
-<td>166</td><td><span class="ct"> * File trailer for generated code.</span></td></tr>
+<td>166</td><td><span class="ct"> */</span></td></tr>
 <tr name="167" id="167">
-<td>167</td><td><span class="ct"> *</span></td></tr>
+<td>167</td><td><span class="pp">#endif</span>                                 <span class="ct">/* RTW_HEADER_mpu6050test_h_ */</span></td></tr>
 <tr name="168" id="168">
-<td>168</td><td><span class="ct"> * [EOF]</span></td></tr>
+<td>168</td><td></td></tr>
 <tr name="169" id="169">
-<td>169</td><td><span class="ct"> */</span></td></tr>
+<td>169</td><td><span class="ct">/*</span></td></tr>
 <tr name="170" id="170">
-<td>170</td><td></td></tr>
+<td>170</td><td><span class="ct"> * File trailer for generated code.</span></td></tr>
+<tr name="171" id="171">
+<td>171</td><td><span class="ct"> *</span></td></tr>
+<tr name="172" id="172">
+<td>172</td><td><span class="ct"> * [EOF]</span></td></tr>
+<tr name="173" id="173">
+<td>173</td><td><span class="ct"> */</span></td></tr>
+<tr name="174" id="174">
+<td>174</td><td></td></tr>
 </table>
 </pre>
 </body>
